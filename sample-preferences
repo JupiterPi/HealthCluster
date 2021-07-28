@@ -1,2 +1,5 @@
-test: hello you
-other test: hello you other person
+self-name:
+
+bot-token:
+bot-guild:
+bot-logging-channel:
