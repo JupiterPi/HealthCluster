@@ -34,4 +34,8 @@ public class Bot {
     public void log(String message) {
         loggingChannel.sendMessage(String.format("[%s] %s", selfName, message)).queue();
     }
+
+    public void err(String message) {
+        loggingChannel.sendMessage(String.format("[%s] ERROR! %s", selfName, message)).queue();
+    }
 }

@@ -1,5 +1,7 @@
-self-name:
+self-name: test-server
 
-bot-token:
-bot-guild:
-bot-logging-channel:
+bot-token: ***
+bot-guild: ***
+bot-logging-channel: ***
+
+knock-timeout: 10

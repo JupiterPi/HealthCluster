@@ -18,6 +18,12 @@ public class Server {
         return url.substring(0, url.length()- (url.endsWith("/") ? 1 : 0) );
     }
 
+    /* make url */
+
+    public String getKnockUrl() {
+        return getUrl() + "/knock";
+    }
+
     @Override
     public String toString() {
         return "Server{" +
