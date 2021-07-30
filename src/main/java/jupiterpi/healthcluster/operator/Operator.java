@@ -3,6 +3,7 @@ package jupiterpi.healthcluster.operator;
 import jupiterpi.healthcluster.GlobalPreferences;
 import jupiterpi.healthcluster.Bot;
 import jupiterpi.healthcluster.Http;
+import jupiterpi.healthcluster.Server;
 
 import java.util.ArrayList;
 import java.util.List;

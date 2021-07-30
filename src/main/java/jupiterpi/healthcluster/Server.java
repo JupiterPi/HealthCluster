@@ -1,4 +1,4 @@
-package jupiterpi.healthcluster.operator;
+package jupiterpi.healthcluster;
 
 public class Server {
     private String name;

@@ -17,7 +17,6 @@ public class LeaderController {
     @PostMapping("/register/{clientUrl}")
     public String registerClient(@PathVariable String clientUrl) {
         if (noLeader()) return "not leader";
-        // ...
-        return "ok";
+        return leader.registerClient(clientUrl) ? "ok" : "does not exist";
     }
 }
