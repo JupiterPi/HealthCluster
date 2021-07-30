@@ -16,11 +16,20 @@ public class Operator {
     public Operator(Bot bot) {
         this.bot = bot;
 
-        loadServers();
+        servers = new ArrayList<>();
+        for (int i = 0; ; i++) {
+            String id = i == 0 ? ""+i : "self";
+            String str = GlobalPreferences.get("server." + id);
+            if (str == null) {
+                break;
+            }
+            servers.add(new Server(str));
+        }
+        List<Server> otherServers = servers.subList(1, servers.size());
 
         try {
             List<String> suggestedLeaderUrls = new ArrayList<>();
-            for (Server server : servers) {
+            for (Server server : otherServers) {
                 Http.async("get", server.getKnockUrl(), (code, response) -> {
                     if (code == 200) {
                         suggestedLeaderUrls.add(response);
@@ -29,9 +38,6 @@ public class Operator {
             }
             Thread.sleep(Integer.parseInt(GlobalPreferences.get("knock-timeout")) * 1000);
 
-            if (suggestedLeaderUrls.size() == 0) {
-                bot.err("No suggested urls after knocking. ");
-            }
             String suggestedLeaderUrl = null;
             for (String url : suggestedLeaderUrls) {
                 if (suggestedLeaderUrl == null) {
@@ -45,27 +51,17 @@ public class Operator {
             }
 
             if (suggestedLeaderUrl == null) {
-                bot.err("No suggested leader url!");
-                new Exception("No suggested leader url!").printStackTrace();
+                bot.log("Electing self as leader. ");
+                leader = servers.get(0);
             }
             for (Server server : servers) {
                 if (server.getUrl().equals(suggestedLeaderUrl)) {
+                    bot.log(String.format("Acknowledging %s as leader. ", server.toString()));
                     leader = server;
                 }
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-    }
-
-    private void loadServers() {
-        servers = new ArrayList<>();
-        for (int i = 1; ; i++) {
-            String str = GlobalPreferences.get("server." + i);
-            if (str == null) {
-                break;
-            }
-            servers.add(new Server(str));
         }
     }
 }

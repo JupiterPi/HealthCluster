@@ -1,7 +1,10 @@
-self-name: test-server
-
 bot-token: ***
 bot-guild: ***
 bot-logging-channel: ***
+
+server.self: "test" test.example.com
+server.1: "test1" test1.example.com
+server.2: "test2" test2.example.com
+server.3: "test3" test3.example.com
 
 knock-timeout: 10
