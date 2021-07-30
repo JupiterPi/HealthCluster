@@ -1,6 +1,5 @@
 package jupiterpi.healthcluster;
 
-import jupiterpi.healthcluster.preferences.Preferences;
 import jupiterpi.tools.files.Path;
 
 public class GlobalPreferences {

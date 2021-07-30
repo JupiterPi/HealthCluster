@@ -1,4 +1,4 @@
-package jupiterpi.healthcluster.preferences;
+package jupiterpi.healthcluster;
 
 import jupiterpi.tools.files.Path;
 import jupiterpi.tools.files.TextFile;

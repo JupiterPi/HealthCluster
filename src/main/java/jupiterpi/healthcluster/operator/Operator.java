@@ -1,8 +1,8 @@
 package jupiterpi.healthcluster.operator;
 
 import jupiterpi.healthcluster.GlobalPreferences;
-import jupiterpi.healthcluster.bot.Bot;
-import jupiterpi.healthcluster.http.Http;
+import jupiterpi.healthcluster.Bot;
+import jupiterpi.healthcluster.Http;
 
 import java.util.ArrayList;
 import java.util.List;

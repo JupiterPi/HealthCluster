@@ -1,4 +1,4 @@
-package jupiterpi.healthcluster.bot;
+package jupiterpi.healthcluster;
 
 import jupiterpi.healthcluster.GlobalPreferences;
 import net.dv8tion.jda.api.JDA;

@@ -1,4 +1,4 @@
-package jupiterpi.healthcluster.http;
+package jupiterpi.healthcluster;
 
 import java.io.BufferedReader;
 import java.io.IOException;
